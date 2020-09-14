@@ -11,3 +11,5 @@ const instance = axios.create ({
 } );
 
 export default instance;
+
+// you can only make one default per file. 
