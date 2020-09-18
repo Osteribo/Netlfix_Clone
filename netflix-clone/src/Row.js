@@ -5,6 +5,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from './axios';
 
+const base_url = "https://image.tmdb.org/t/p/original/";
+
 // useState for short term vairiables. They will empty on refresh
 
 function Row({title, fetchUrl}) {
@@ -19,7 +21,7 @@ function Row({title, fetchUrl}) {
                 // create a variable to store response from server
             const request = await axios.get(fetchUrl);
                 // check that there are results
-            console.log(request.data.results);
+            setMovies(request.data.results);
                 // return the variable with data to the row
             return request;
         }
@@ -29,14 +31,21 @@ function Row({title, fetchUrl}) {
         // in this case "fetchUrl" is our dependecy. It is from outside the useEffect() block and needs to update whenever row is called.
     }, [fetchUrl]);
     
-    console.log(`look at these sweet movies: ${movies}`);
-    console.log(movies);
+  
+    console.table(movies);
 
     return (
-        <div>
-            
-            <h2> {title}</h2>
+        <div className="row">
 
+            <h2> {title}</h2>
+                
+            <div className='row_posters'>
+
+                {movies.map(movie =>(
+                    <img src={`${base_url}${movie.poster_path}`} alt={movie.name}/> )
+                )}
+                    
+            </div>
 
         </div>
     )
