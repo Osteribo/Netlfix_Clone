@@ -1,7 +1,7 @@
 // this is an component hence the the capital R in Row.js
 // this will create the rows and sections for the api to fill with shows/movies
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, isLargeRow } from "react";
 import axios from "./axios";
 import "./Row.css";
 
@@ -9,7 +9,7 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 
 // useState for short term vairiables. They will empty on refresh
 
-function Row({ title, fetchUrl }) {
+function Row({ title, fetchUrl, isLargeRow }) {
   // short term holder for movies to populate
   const [movies, setMovies] = useState([]);
 
@@ -43,7 +43,9 @@ function Row({ title, fetchUrl }) {
             // "key" will optimize the rendering of the images. This is critical in production systems with lots of images. should be general practice.  In this case it will keep react from rending the same movie poster image more than once
             key={movie.id}
             className="row_poster"
-            src={`${base_url}${movie.poster_path}`}
+            src={`${base_url}${
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
             alt={movie.name}
           />
         ))}
