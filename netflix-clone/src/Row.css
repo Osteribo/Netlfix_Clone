@@ -1,0 +1,28 @@
+.row_posters {
+  display: flex;
+  /* this will hide the overflow of the images growing that would otherwise create a scroll bar */
+  overflow-y: hidden;
+  /* this will create a scroll bar in the x direction so the movies do not run off the page */
+  overflow-x: scroll;
+  /* this padding will allow the images to grow without the container cropping them */
+  padding: 20px;
+}
+
+.row_posters::-webkit-scrollbar {
+  /* this will tell any browser to hide the scroll bar  */
+  display: none;
+}
+.row_poster {
+  /* objectd-fit:contain will keep the aspect ratio of the images */
+  object-fit: contain;
+  width: 100%;
+  max-height: 200px;
+  margin: 10px;
+  /* this transition will cause the size change to happen over 450ms instead of instantly */
+  transition: transform 450ms;
+}
+
+.row_poster:hover {
+  /* this causes the size of the poster the change by a factor of 1.08 when the cursor is hovering over it */
+  transform: scale(1.08);
+}
