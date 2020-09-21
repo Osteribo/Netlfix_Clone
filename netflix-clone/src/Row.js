@@ -42,7 +42,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
           <img
             // "key" will optimize the rendering of the images. This is critical in production systems with lots of images. should be general practice.  In this case it will keep react from rending the same movie poster image more than once
             key={movie.id}
-            className="row_poster"
+            className={`row_poster ${isLargeRow && "row__posterLarge"}`}
             src={`${base_url}${
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}

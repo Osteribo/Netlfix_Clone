@@ -16,7 +16,7 @@
   /* objectd-fit:contain will keep the aspect ratio of the images */
   object-fit: contain;
   width: 100%;
-  max-height: 200px;
+  max-height: 100px;
   margin: 10px;
   /* this transition will cause the size change to happen over 450ms instead of instantly */
   transition: transform 450ms;
@@ -25,4 +25,12 @@
 .row_poster:hover {
   /* this causes the size of the poster the change by a factor of 1.08 when the cursor is hovering over it */
   transform: scale(1.08);
+}
+
+.row__posterLarge {
+  max-height: 250px;
+}
+
+.row__posterLarge:hover {
+  transform: scale(1.09);
 }
