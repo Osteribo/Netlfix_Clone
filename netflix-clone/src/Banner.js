@@ -38,7 +38,8 @@ function Banner() {
         {/* title */}
         <h1>
           {/* this will pull the title or (||) name or (||) orignal_name from the movie state/effect above. 
-        if there is nothing there then the Optional Chaining feature (?) will tell keep it from crashing by giving null  */}
+        if there is nothing there then the Optional Chaining feature (?) will tell keep it from crashing by giving null.
+      The nameing convention is from the api json return  */}
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
         {/* Div 2 buttons */}
@@ -46,8 +47,8 @@ function Banner() {
           <button className="banner__button"> Play </button>
           <button className="banner__button"> My List </button>
         </div>
-
         {/* Description */}
+        <div className="banner__description">{movie?.overview}</div>
       </div>
     </header>
   );
