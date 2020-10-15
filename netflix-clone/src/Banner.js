@@ -35,18 +35,19 @@ function Banner() {
       }}
     >
       <div className="banner__contents">
-        {/* background image */}
+        {/* title */}
         <h1>
           {/* this will pull the title or (||) name or (||) orignal_name from the movie state/effect above. 
         if there is nothing there then the Optional Chaining feature (?) will tell keep it from crashing by giving null  */}
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        // title
-        {}
-        // Div 2 buttons
-        {}
-        // Description
-        {}
+        {/* Div 2 buttons */}
+        <div className="banner__buttons">
+          <button className="banner__button"> Play </button>
+          <button className="banner__button"> My List </button>
+        </div>
+
+        {/* Description */}
       </div>
     </header>
   );
