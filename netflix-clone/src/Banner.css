@@ -1,0 +1,7 @@
+.banner {
+  /* turn text white */
+  color: white;
+  /* contains whole header within perscribed box */
+  object-fit: contain;
+  height: 448px;
+}
