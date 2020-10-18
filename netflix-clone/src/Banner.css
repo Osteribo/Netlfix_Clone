@@ -5,3 +5,9 @@
   object-fit: contain;
   height: 448px;
 }
+
+.banner__contents {
+  margin-left: 30px;
+  padding-top: 140px;
+  height: 190px;
+}
