@@ -4,12 +4,9 @@ import Row from "./Row.js";
 import requests from "./requests.js";
 import Banner from "./Banner.js";
 
-
 function App() {
   return (
     <div className="App">
-      <h1> Heyo Lets Code it up!</h1>
-      
       <Banner> </Banner>
 
       <Row

@@ -37,7 +37,7 @@ function Banner() {
     >
       <div className="banner__contents">
         {/* title */}
-        <h1>
+        <h1 className="banner__title">
           {/* this will pull the title or (||) name or (||) orignal_name from the movie state/effect above. there are three options because of the nature of the API using different naming convention.
           if .stuff does not return anything then the Optional Chaining feature (?) will tell keep it from crashing by giving null.
           The nameing convention of .stuff is from the API json return  */}
