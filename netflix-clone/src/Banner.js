@@ -22,6 +22,10 @@ function Banner() {
     fetchData();
   }, []);
 
+  function truncate(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  }
+
   console.log(movie);
 
   return (
@@ -51,7 +55,9 @@ function Banner() {
         </div>
         {/* Description */}
         {/* these pull the overview(description) of the movie from the state/effect function above */}
-        <div className="banner__description">{movie?.overview}</div>
+        <h1 className="banner__description">
+          {truncate(movie?.overview, 150)}
+        </h1>
       </div>
     </header>
   );
