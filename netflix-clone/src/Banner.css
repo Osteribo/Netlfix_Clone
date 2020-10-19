@@ -26,3 +26,25 @@
   max-width: 350px;
   height: 80px;
 }
+
+.banner__button {
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-right: 1rem;
+  background-color: black;
+  border-radius: 0.2vw;
+}
+
+.banner__button:hover {
+  color: black;
+  background-color: rgb(184, 184, 184);
+  transition: all 0.2s;
+}
