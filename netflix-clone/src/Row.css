@@ -1,3 +1,8 @@
+.row {
+  color: whitesmoke;
+  margin-left: 20px;
+}
+
 .row_posters {
   display: flex;
   /* this will hide the overflow of the images growing that would otherwise create a scroll bar */
