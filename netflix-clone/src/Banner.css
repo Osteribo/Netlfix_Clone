@@ -34,10 +34,12 @@
   outline: none;
   border: none;
   font-weight: 700;
+  /* these padding setting will make the button larger around the text */
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  /* this margin right adds spacing between the buttons */
   margin-right: 1rem;
   background-color: black;
   border-radius: 0.2vw;
@@ -46,5 +48,6 @@
 .banner__button:hover {
   color: black;
   background-color: rgb(184, 184, 184);
+  /* will cause the banner button to trasition to the above color and background-color decribed above */
   transition: all 0.2s;
 }
