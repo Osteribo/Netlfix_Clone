@@ -1,0 +1,30 @@
+.nav {
+  /* this will keep the nav bar at the top of the window at all times */
+  position: fixed;
+  top: 0;
+
+  /* this will allow for resposive nav bar */
+  display: flex;
+  justify-content: space-between;
+
+  /* setting height will limit the height of the nav bar so it does not overtake the screen */
+
+  width: 100%;
+
+  padding: 20px;
+}
+
+.nav__logo {
+  /* object-fit allows the image to be sized within the container keeping aspect ratio */
+  object-fit: contain;
+  position: fixed;
+  left: 20px;
+  width: 7rem;
+}
+
+.nav__avatar {
+  object-fit: contain;
+  position: fixed;
+  right: 20px;
+  width: 4rem;
+}
