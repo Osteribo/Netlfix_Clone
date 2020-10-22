@@ -10,15 +10,21 @@
   /* setting height will limit the height of the nav bar so it does not overtake the screen */
 
   width: 100%;
-
+  height: 2rem;
   padding: 20px;
+}
+
+.nav__black {
+  background-color: #111;
 }
 
 .nav__logo {
   /* object-fit allows the image to be sized within the container keeping aspect ratio */
   object-fit: contain;
   position: fixed;
+  /* centers the image so it does not cut off */
   left: 20px;
+  /* widths controls the size of the image */
   width: 7rem;
 }
 
@@ -26,5 +32,5 @@
   object-fit: contain;
   position: fixed;
   right: 20px;
-  width: 4rem;
+  width: 2rem;
 }
