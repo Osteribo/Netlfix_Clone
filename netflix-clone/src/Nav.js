@@ -3,7 +3,7 @@ import "./Nav.css";
 
 function Nav() {
   const [show, setshow] = useState(false);
-  // this addes a black bar when the user scrolls 100px or more in the Y direction
+  // this adds a black bar when the user scrolls 100px or more in the Y direction
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -16,6 +16,7 @@ function Nav() {
   }, []);
 
   return (
+    //   the addition of ${show && "nav__black"} inside of class name allow additional css or js to active when the condition is true. This allows for more complexe activites in a simple manor
     <div className={`nav ${show && "nav__black"}`}>
       <img
         className="nav__logo"
