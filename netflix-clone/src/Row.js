@@ -1,9 +1,11 @@
 // this is an component hence the the capital R in Row.js
 // this will create the rows and sections for the api to fill with shows/movies
 
-import React, { useState, useEffect, isLargeRow } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "./axios";
 import "./Row.css";
+import YouTube from "react-youtube";
+import movieTrailer from "movie-trailer";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -31,7 +33,34 @@ function Row({ title, fetchUrl, isLargeRow }) {
     // in this case "fetchUrl" is our dependecy. It is from outside the useEffect() block and needs to update whenever row is called.
   }, [fetchUrl]);
 
-  console.table(movies);
+  // console.table(movies);
+
+  // fuction to play trailer when a movie is clicked on the screen
+  const [trailerUrl, setTrailerUrl] = useState("");
+
+  const handleClick = (movie) => {
+    // set trailer url to stop playing other video if one is playing
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      movieTrailer(movie?.title || movie?.name || movie?.source)
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          console.log(urlParams);
+          setTrailerUrl(urlParams.get("v"));
+          console.log(trailerUrl);
+        })
+        .catch((error) => console.log(error));
+    }
+  };
+
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoPlay: 1,
+    },
+  };
 
   return (
     <div className="row">
@@ -42,6 +71,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
           <img
             // "key" will optimize the rendering of the images. This is critical in production systems with lots of images. should be general practice.  In this case it will keep react from rending the same movie poster image more than once
             key={movie.id}
+            onClick={() => handleClick(movie)}
             className={`row_poster ${isLargeRow && "row__posterLarge"}`}
             src={`${base_url}${
               isLargeRow ? movie.poster_path : movie.backdrop_path
@@ -50,6 +80,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
           />
         ))}
       </div>
+      {/* https://www.youtube.com/watch?v=H9Ht27r7ROk */}
+      {console.log(trailerUrl)}
+      {trailerUrl && <YouTube videoID={trailerUrl} opts={opts} />}
     </div>
   );
 }
