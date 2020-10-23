@@ -103,9 +103,11 @@ function Row({ title, fetchUrl, isLargeRow }) {
           />
         ))}
       </div>
-      {/* https://www.youtube.com/watch?v=H9Ht27r7ROk */}
-      {console.log(typeof trailerUrl)}
-      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      <div className="row_video_player">
+        {/* https://www.youtube.com/watch?v=H9Ht27r7ROk */}
+        {console.log(typeof trailerUrl)}
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      </div>
     </div>
   );
 }

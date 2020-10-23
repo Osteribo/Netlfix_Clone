@@ -1,6 +1,6 @@
 # Purpose
 
-This is a netflix clone app using react js on firebase. 
+This is a netflix front-end clone app using react js on firebase. 
 
 ### API
 

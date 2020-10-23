@@ -21,7 +21,8 @@
   /* objectd-fit:contain will keep the aspect ratio of the images */
   object-fit: contain;
   width: 100%;
-  max-height: 100px;
+  max-height: 10rem;
+  min-height: 5rem;
   margin: 10px;
   /* this transition will cause the size change to happen over 450ms instead of instantly */
   transition: transform 450ms;
@@ -33,9 +34,14 @@
 }
 
 .row__posterLarge {
-  max-height: 250px;
+  max-height: 20rem;
+  min-height: 15rem;
 }
 
 .row__posterLarge:hover {
   transform: scale(1.09);
+}
+
+.row_video_player {
+  width: 100%;
 }
