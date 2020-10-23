@@ -43,14 +43,37 @@ function Row({ title, fetchUrl, isLargeRow }) {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
+      console.log(movie.name);
       movieTrailer(movie?.title || movie?.name || movie?.source)
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           console.log(urlParams);
           setTrailerUrl(urlParams.get("v"));
-          console.log(trailerUrl);
+          console.log("the url for the trailer is " + trailerUrl);
         })
         .catch((error) => console.log(error));
+
+      // async function fetchVideo() {
+      //   // create a variable to store response from server
+      //   const request = await axios.get(
+      //     `/movie/${movie.id}/videos?api_key=4d39fff22390e1871bfb88ccc0ac8426&language=en-US`
+      //   );
+      //   // check that there are results
+      //   console.log(request);
+      //   console.log(request.data);
+      //   console.log(request.data.results);
+      //   console.log(request.data.results[0].key);
+
+      //   setTrailerUrl(
+      //     request.data.results[0].key
+      //     // https://api.themoviedb.org/3/movie/3/videos?api_key=4d39fff22390e1871bfb88ccc0ac8426&language=en-US
+      //   );
+      //   // return the variable with data to the row
+      //   return request;
+      // }
+      // fetchVideo();
+
+      console.log(trailerUrl);
     }
   };
 
@@ -81,8 +104,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
         ))}
       </div>
       {/* https://www.youtube.com/watch?v=H9Ht27r7ROk */}
-      {console.log(trailerUrl)}
-      {trailerUrl && <YouTube videoID={trailerUrl} opts={opts} />}
+      {console.log(typeof trailerUrl)}
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </div>
   );
 }
